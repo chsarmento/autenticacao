@@ -1,1 +1,7 @@
+br\pucminas\autenticacao\dto\Usuario.class
+br\pucminas\autenticacao\dto\Permissao.class
+br\pucminas\autenticacao\dto\Grupo.class
+br\pucminas\autenticacao\SwaggerConfig.class
+br\pucminas\autenticacao\AutenticacaoController.class
+br\pucminas\autenticacao\dto\Token.class
 br\pucminas\autenticacao\AutenticacaoApplication.class
