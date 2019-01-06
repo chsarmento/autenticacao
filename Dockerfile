@@ -11,10 +11,16 @@ VOLUME /tmp
 EXPOSE 8080
 
 # build app
-#RUN yum install git
-#RUN git clone https://github.com/chsarmento/api-rest.git
-#RUN cd api-rest
-#RUN mvn install
+
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh \
+	maven 
+
+RUN git clone https://github.com/chsarmento/autenticacao.git
+
+WORKDIR /autenticacao
+
+RUN mvn install
 
 # The application's jar file
 ARG JAR_FILE=target/autenticacao-0.0.1-SNAPSHOT.jar
@@ -23,5 +29,5 @@ ARG JAR_FILE=target/autenticacao-0.0.1-SNAPSHOT.jar
 ADD ${JAR_FILE} autenticacao.jar
 
 # Run the jar file 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/autenticacao.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","autenticacao.jar"]
 

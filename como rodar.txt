@@ -1,0 +1,7 @@
+criar a imagem
+docker build -t autenticacao .
+
+rodar 
+docker run -d -p 8888:8080 autenticacao
+
+http://localhost:8888/swagger-ui.html
