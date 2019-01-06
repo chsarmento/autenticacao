@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: autenticacao
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: autenticacao
+    spec:
+      containers:
+      - name: autenticacao
+        image: autenticacao
+        ports:
+        - containerPort: 3001
